@@ -1,0 +1,46 @@
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Login</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="login" placeholder="Login" value="{{login}}">
+            {{#if _id}}
+                <input type="hidden" name="_id" value="{{_id}}">
+            {{/if}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">First Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="firstName" placeholder="First Name" value="{{firstName}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Last Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="lastName" placeholder="Last Name" value="{{lastName}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" name="email" placeholder="Email" value="{{email}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Password Confirmation</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" name="passwordConfirmation" placeholder="Password Confirmation">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Save</button>
+        </div>
+    </div>
+</form>
