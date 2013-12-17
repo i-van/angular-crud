@@ -1,11 +1,11 @@
 
-var userControllers = angular.module('userControllers', []);
+var controllers = angular.module('app.controllers', []);
 
-userControllers.controller('HomeCtrl', function($scope) {
+controllers.controller('HomeCtrl', function($scope) {
 
 });
 
-userControllers.controller('NavCtrl', function($scope) {
+controllers.controller('NavCtrl', function($scope) {
     $scope.links = [
         { href: '#/home', label: 'Home' },
         { href: '#/list', label: 'List of users' },
@@ -13,7 +13,7 @@ userControllers.controller('NavCtrl', function($scope) {
     ];
 });
 
-userControllers.controller('ListCtrl', function($scope) {
+controllers.controller('ListCtrl', function($scope) {
     $scope.users = [
         {
             _id: 1,

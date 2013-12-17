@@ -1,7 +1,7 @@
 
-var userApp = angular.module('userApp', ['ngRoute', 'userControllers']);
+var app = angular.module('app', ['ngRoute', 'app.controllers']);
 
-userApp.config(function($routeProvider) {
+app.config(function($routeProvider) {
 //        "create": "create",
 //        "edit/:id": "edit",
 //        "remove/:id": "remove"
