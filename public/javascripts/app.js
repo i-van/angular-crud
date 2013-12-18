@@ -1,5 +1,5 @@
 
-var app = angular.module('app', ['ngRoute', 'app.controllers']);
+var app = angular.module('app', ['ngRoute', 'app.controllers', 'app.services']);
 
 app.config(function($routeProvider) {
 //        "create": "create",
@@ -12,7 +12,12 @@ app.config(function($routeProvider) {
         })
         .when('/list/:page?', {
             templateUrl: '/javascripts/partials/list.html',
-            controller: 'ListCtrl'
+            controller: 'ListCtrl',
+            resolve: {
+                users: function(User, $route) {
+                    return User.query({ page: $route.current.params.page })
+                }
+            }
         })
         .otherwise({
             redirectTo: '/home'
