@@ -23,6 +23,15 @@ app.config(function($routeProvider) {
             templateUrl: '/javascripts/partials/create.html',
             controller: 'CreateCtrl'
         })
+        .when('/edit/:id', {
+            templateUrl: '/javascripts/partials/edit.html',
+            controller: 'EditCtrl',
+            resolve: {
+                user: function(User, $route) {
+                    return User.get({ id: $route.current.params.id })
+                }
+            }
+        })
         .otherwise({
             redirectTo: '/home'
         });

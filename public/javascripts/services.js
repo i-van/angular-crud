@@ -6,6 +6,7 @@ services.factory('User', function ($resource) {
         query: {
             method: 'GET',
             params: { page: 1 }
-        }
+        },
+        update: { method: 'PUT' }
     });
 });
