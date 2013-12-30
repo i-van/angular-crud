@@ -10,7 +10,7 @@ var mongoose = require('mongoose')
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/users');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/users');
 require('./models/user');
 
 // all environments
