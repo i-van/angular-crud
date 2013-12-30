@@ -19,6 +19,10 @@ app.config(function($routeProvider) {
                 }
             }
         })
+        .when('/create', {
+            templateUrl: '/javascripts/partials/create.html',
+            controller: 'CreateCtrl'
+        })
         .otherwise({
             redirectTo: '/home'
         });

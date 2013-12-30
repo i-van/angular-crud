@@ -16,3 +16,25 @@ controllers.controller('NavCtrl', function($scope) {
 controllers.controller('ListCtrl', function($scope, users) {
     $scope.users = users;
 });
+
+controllers.controller('CreateCtrl', function($scope, $location, User) {
+    $scope.user = {};
+
+    $scope.save = function() {
+        User.save($scope.user, success, error);
+
+        function success() {
+            $location.path('/list');
+        }
+
+        function error(res) {
+            if (res.status !== 400) { return; }
+
+            $scope.errors = {};
+            angular.forEach(res.data, function(error) {
+                ($scope.errors[error.field] || ($scope.errors[error.field] = []))
+                    .push(error.message);
+            });
+        }
+    };
+});
