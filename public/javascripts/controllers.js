@@ -7,7 +7,7 @@ controllers.controller('HomeCtrl', function($scope) {
 
 controllers.controller('NavCtrl', function($scope, $rootScope) {
     $rootScope.$on('$routeChangeSuccess', function(event, route) {
-        $scope.routeRegExp = route.$$route.regexp;
+        $scope.routeRegExp = route.$$route && route.$$route.regexp;
     });
 
     $scope.links = [
@@ -17,8 +17,13 @@ controllers.controller('NavCtrl', function($scope, $rootScope) {
     ];
 });
 
-controllers.controller('ListCtrl', function($scope, users) {
+controllers.controller('ListCtrl', function($scope, users, User, $location) {
     $scope.users = users;
+    $scope.remove = function(id) {
+        User.remove({ id: id }, function() {
+            $location.path('/list');
+        });
+    };
 });
 
 controllers.controller('CreateCtrl', function($scope, $location, User) {

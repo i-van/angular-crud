@@ -21,8 +21,9 @@
         <td>
             <div class="btn-group btn-group-xs">
                 <a href="#/edit/{{user._id}}" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span></a>
-                <a href="#/remove/{{user._id}}"
+                <a href="#"
                    class="btn btn-default"
+                   ng-click="remove(user._id)"
                    data-widget="confirm"
                    data-title="Confirmation"
                    data-body="Do you really want to do that?"><span class="glyphicon glyphicon-remove"></span></a>

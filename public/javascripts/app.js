@@ -2,9 +2,6 @@
 var app = angular.module('app', ['ngRoute', 'app.controllers', 'app.services']);
 
 app.config(function($routeProvider) {
-//        "create": "create",
-//        "edit/:id": "edit",
-//        "remove/:id": "remove"
     $routeProvider
         .when('/home', {
             templateUrl: '/javascripts/partials/home.html',
