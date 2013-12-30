@@ -14,7 +14,9 @@
     <nav ng-controller="NavCtrl" class="navbar navbar-default" role="navigation">
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li ng-repeat="link in links"><a href="{{link.href}}">{{link.label}}</a></li>
+                <li ng-repeat="link in links" ng-class="{ active: routeRegExp.test(link.href) }">
+                    <a href="#{{link.href}}">{{link.label}}</a>
+                </li>
             </ul>
         </div>
     </nav>

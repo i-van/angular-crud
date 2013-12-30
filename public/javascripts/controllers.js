@@ -5,11 +5,15 @@ controllers.controller('HomeCtrl', function($scope) {
 
 });
 
-controllers.controller('NavCtrl', function($scope) {
+controllers.controller('NavCtrl', function($scope, $rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function(event, route) {
+        $scope.routeRegExp = route.$$route.regexp;
+    });
+
     $scope.links = [
-        { href: '#/home', label: 'Home' },
-        { href: '#/list', label: 'List of users' },
-        { href: '#/create', label: 'Create user' }
+        { href: '/home', label: 'Home' },
+        { href: '/list', label: 'List of users' },
+        { href: '/create', label: 'Create user' }
     ];
 });
 
