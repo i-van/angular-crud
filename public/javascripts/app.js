@@ -18,11 +18,16 @@ app.config(function($routeProvider) {
         })
         .when('/create', {
             templateUrl: '/javascripts/partials/create.html',
-            controller: 'CreateCtrl'
+            controller: 'UserCtrl',
+            resolve: {
+                user: function(User) {
+                    return new User();
+                }
+            }
         })
         .when('/edit/:id', {
             templateUrl: '/javascripts/partials/edit.html',
-            controller: 'EditCtrl',
+            controller: 'UserCtrl',
             resolve: {
                 user: function(User, $route) {
                     return User.get({ id: $route.current.params.id })
