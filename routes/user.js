@@ -7,7 +7,7 @@ var mongoose = require('mongoose')
 
 module.exports.list = function(req, res, next) {
     var limit = req.param('limit') || 10
-      , page = req.param('page') || 1;
+      , page = +req.param('page') || 1;
 
     async.parallel({
         data: function(done) {
@@ -21,6 +21,7 @@ module.exports.list = function(req, res, next) {
 
         results.currentPage = page;
         results.itemsPerPage = limit;
+        results.totalPages = Math.ceil(results.totalItems / limit);
         res.json(results)
     })
 };

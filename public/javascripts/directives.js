@@ -5,7 +5,7 @@ directives.factory('Pagination', function() {
     return {
         getLinks: function(options) {
             var currentPage = +options.currentPage
-              , totalPages = Math.ceil(options.totalItems / options.itemsPerPage)
+              , totalPages = +options.totalPages
               , previous = Math.max(currentPage - 1, 1)
               , next = Math.min(currentPage + 1, totalPages)
               , from = currentPage - 2
