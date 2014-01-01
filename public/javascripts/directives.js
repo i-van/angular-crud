@@ -62,7 +62,9 @@ directives.directive('pagination', function(Pagination) {
         scope: {
             pagination: '='
         },
-        template: '<li ng-repeat="link in links" class="{{link.className}}"><a href="{{link.url}}" ng-bind-html="link.label"></a></li>',
+        template: '<li ng-repeat="link in links" class="{{link.className}}">'
+                +     '<a href="{{link.url}}" ng-bind-html="link.label"></a>'
+                + '</li>',
         link: function(scope, el) {
             el.addClass('pagination');
             scope.links = [];
@@ -75,7 +77,9 @@ directives.directive('pagination', function(Pagination) {
 });
 
 directives.directive('confirm', function($compile) {
-    var template = '<modal-confirm title="{{confirm.title}}" on-confirm="onConfirm()"><p>{{confirm.message}}</p></modal-confirm>';
+    var template = '<modal-confirm title="{{confirm.title}}" on-confirm="onConfirm()">'
+                 +     '<p>{{confirm.message}}</p>'
+                 + '</modal-confirm>';
     return {
         restrict: 'A',
         scope: {
