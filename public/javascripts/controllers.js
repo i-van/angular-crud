@@ -17,11 +17,11 @@ controllers.controller('NavCtrl', function($scope, $rootScope) {
     ];
 });
 
-controllers.controller('ListCtrl', function($scope, users, User, $location) {
+controllers.controller('ListCtrl', function($scope, users, User, $route) {
     $scope.users = users;
     $scope.remove = function(id) {
         User.remove({ id: id }, function() {
-            $location.path('/list');
+            $route.reload();
         });
     };
 });

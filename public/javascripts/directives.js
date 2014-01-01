@@ -74,6 +74,23 @@ directives.directive('pagination', function(Pagination) {
     };
 });
 
+directives.directive('confirm', function($compile) {
+    var template = '<modal-confirm title="{{confirm.title}}" on-confirm="onConfirm()"><p>{{confirm.message}}</p></modal-confirm>';
+    return {
+        restrict: 'A',
+        scope: {
+            confirm: '=',
+            onConfirm: '&'
+        },
+        link: function(scope, el) {
+            el.on('click', function() {
+                $compile(template)(scope);
+                return false;
+            });
+        }
+    };
+});
+
 // completely remove modal element
 $.fn.modal.Constructor.prototype.remove = function() {
     this.removeBackdrop();
