@@ -120,7 +120,9 @@ directives.directive('modalConfirm', function() {
 
             el.on('click', '.modal-footer .btn-primary', function() {
                 el.data('bs.modal').hide();
-                scope.confirm();
+                scope.$apply(function() {
+                    scope.confirm();
+                });
             });
         }
     };
