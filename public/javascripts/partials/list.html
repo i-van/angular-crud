@@ -16,8 +16,8 @@
         <td>{{user.firstName}}</td>
         <td>{{user.lastName}}</td>
         <td>{{user.email}}</td>
-        <td>{{user.created}}</td>
-        <td>{{user.updated}}</td>
+        <td>{{user.created | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>{{user.updated | date:'yyyy-MM-dd HH:mm:ss' }}</td>
         <td>
             <div class="btn-group btn-group-xs">
                 <a href="#/edit/{{user._id}}" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span></a>
