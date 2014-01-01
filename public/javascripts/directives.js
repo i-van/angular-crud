@@ -73,3 +73,34 @@ directives.directive('pagination', function(Pagination) {
         }
     };
 });
+
+// completely remove modal element
+$.fn.modal.Constructor.prototype.remove = function() {
+    this.removeBackdrop();
+    this.$element.remove();
+    this.$element = null
+};
+
+directives.directive('modalConfirm', function() {
+    return {
+        restrict: 'E',
+        scope: {
+            title: '@',
+            confirm: '&onConfirm'
+        },
+        replace: true,
+        transclude: true,
+        templateUrl: '/javascripts/partials/modal-confirm.html',
+        link: function(scope, el) {
+            el.modal('show');
+            el.on('hidden.bs.modal', function() {
+                el.data('bs.modal').remove();
+            });
+
+            el.on('click', '.modal-footer .btn-primary', function() {
+                el.data('bs.modal').hide();
+                scope.confirm();
+            });
+        }
+    };
+});
