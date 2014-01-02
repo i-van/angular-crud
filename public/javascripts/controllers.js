@@ -1,10 +1,6 @@
 
 var controllers = angular.module('app.controllers', []);
 
-controllers.controller('HomeCtrl', function($scope) {
-
-});
-
 controllers.controller('NavCtrl', function($scope, $rootScope) {
     $rootScope.$on('$routeChangeSuccess', function(event, route) {
         $scope.routeRegExp = route.$$route && route.$$route.regexp;

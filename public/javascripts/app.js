@@ -5,7 +5,7 @@ app.config(function($routeProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: '/javascripts/partials/home.html',
-            controller: 'HomeCtrl'
+            controller: angular.noop
         })
         .when('/list/:page?', {
             templateUrl: '/javascripts/partials/list.html',
