@@ -4,7 +4,7 @@ var app = angular.module('app', ['ngRoute', 'app.controllers', 'app.services', '
 app.config(function($routeProvider) {
     $routeProvider
         .when('/home', {
-            templateUrl: '/javascripts/partials/home.html',
+            template: '<h1>Home Page</h1>',
             controller: angular.noop
         })
         .when('/list/:page?', {
