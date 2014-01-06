@@ -41,7 +41,7 @@ directives.factory('Pagination', function() {
                 links.push({
                     className: currentPage == i ? 'active': '',
                     url: _url(i),
-                    label: i.toString()
+                    label: i
                 });
             }
 
@@ -63,7 +63,7 @@ directives.directive('pagination', function(Pagination) {
             pagination: '='
         },
         template: '<li ng-repeat="link in links" class="{{link.className}}">'
-                +     '<a href="{{link.url}}" ng-bind-html="link.label"></a>'
+                +     '<a href="{{link.url}}" ng-bind-html="link.label.toString()"></a>'
                 + '</li>',
         link: function(scope, el) {
             el.addClass('pagination');
