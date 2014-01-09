@@ -111,7 +111,7 @@ directives.directive('modalConfirm', function() {
         },
         replace: true,
         transclude: true,
-        templateUrl: '/javascripts/app/partials/modal-confirm.html',
+        templateUrl: '/javascripts/app/templates/modal-confirm.html',
         link: function(scope, el) {
             el.modal('show');
             el.on('hidden.bs.modal', function() {

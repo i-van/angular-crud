@@ -2,4 +2,4 @@
 node_modules
 public/javascripts/bower_components
 builtAssets
-public/javascripts/app/partials/templates.js
+public/javascripts/app/templates/build.js

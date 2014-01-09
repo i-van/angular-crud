@@ -17,8 +17,8 @@ module.exports = function(grunt) {
                         collapseWhitespace: true
                     }
                 },
-                src: ['public/javascripts/app/partials/**.html'],
-                dest: 'public/javascripts/app/partials/templates.js'
+                src: ['public/javascripts/app/templates/**.html'],
+                dest: 'public/javascripts/app/templates/build.js'
             }
         }
     });

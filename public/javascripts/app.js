@@ -24,7 +24,7 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: angular.noop
         })
         .when('/list/:page?', {
-            templateUrl: '/javascripts/app/partials/list.html',
+            templateUrl: '/javascripts/app/templates/list.html',
             controller: 'ListCtrl',
             resolve: {
                 users: ['User', '$route', function(User, $route) {
@@ -33,7 +33,7 @@ app.config(['$routeProvider', function($routeProvider) {
             }
         })
         .when('/create', {
-            templateUrl: '/javascripts/app/partials/create.html',
+            templateUrl: '/javascripts/app/templates/create.html',
             controller: 'UserCtrl',
             resolve: {
                 user: ['User', function(User) {
@@ -42,7 +42,7 @@ app.config(['$routeProvider', function($routeProvider) {
             }
         })
         .when('/edit/:id', {
-            templateUrl: '/javascripts/app/partials/edit.html',
+            templateUrl: '/javascripts/app/templates/edit.html',
             controller: 'UserCtrl',
             resolve: {
                 user: ['User', '$route', function(User, $route) {
