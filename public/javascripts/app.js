@@ -6,10 +6,7 @@
 //= require bower_components/angular-resource/angular-resource.js
 //= require bower_components/angular-sanitize/angular-sanitize.js
 //= require bower_components/angular-animate/angular-animate.js
-//= require controllers.js
-//= require services.js
-//= require directives.js
-//= require templates.js
+//= require_tree app
 
 var app = angular.module('app', [
     'ngRoute',
@@ -27,7 +24,7 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: angular.noop
         })
         .when('/list/:page?', {
-            templateUrl: '/javascripts/partials/list.html',
+            templateUrl: '/javascripts/app/partials/list.html',
             controller: 'ListCtrl',
             resolve: {
                 users: ['User', '$route', function(User, $route) {
@@ -36,7 +33,7 @@ app.config(['$routeProvider', function($routeProvider) {
             }
         })
         .when('/create', {
-            templateUrl: '/javascripts/partials/create.html',
+            templateUrl: '/javascripts/app/partials/create.html',
             controller: 'UserCtrl',
             resolve: {
                 user: ['User', function(User) {
@@ -45,7 +42,7 @@ app.config(['$routeProvider', function($routeProvider) {
             }
         })
         .when('/edit/:id', {
-            templateUrl: '/javascripts/partials/edit.html',
+            templateUrl: '/javascripts/app/partials/edit.html',
             controller: 'UserCtrl',
             resolve: {
                 user: ['User', '$route', function(User, $route) {
