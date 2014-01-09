@@ -56,7 +56,7 @@ directives.factory('Pagination', function() {
     };
 });
 
-directives.directive('pagination', function(Pagination) {
+directives.directive('pagination', ['Pagination', function(Pagination) {
     return {
         restrict: 'A',
         scope: {
@@ -74,9 +74,9 @@ directives.directive('pagination', function(Pagination) {
             });
         }
     };
-});
+}]);
 
-directives.directive('confirm', function($compile) {
+directives.directive('confirm', ['$compile', function($compile) {
     var template = '<modal-confirm title="{{confirm.title}}" on-confirm="onConfirm()">'
                  +     '<p>{{confirm.message}}</p>'
                  + '</modal-confirm>';
@@ -93,7 +93,7 @@ directives.directive('confirm', function($compile) {
             });
         }
     };
-});
+}]);
 
 // completely remove modal element
 $.fn.modal.Constructor.prototype.remove = function() {

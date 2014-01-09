@@ -1,7 +1,7 @@
 
 var controllers = angular.module('app.controllers', []);
 
-controllers.controller('NavCtrl', function($scope, $rootScope) {
+controllers.controller('NavCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
     $rootScope.$on('$routeChangeSuccess', function(event, route) {
         $scope.routeRegExp = route.$$route && route.$$route.regexp;
     });
@@ -11,18 +11,18 @@ controllers.controller('NavCtrl', function($scope, $rootScope) {
         { href: '/list', label: 'List of users' },
         { href: '/create', label: 'Create user' }
     ];
-});
+}]);
 
-controllers.controller('ListCtrl', function($scope, users, User, $route) {
+controllers.controller('ListCtrl', ['$scope', 'users', 'User', '$route', function($scope, users, User, $route) {
     $scope.users = users;
     $scope.remove = function(id) {
         User.remove({ id: id }, function() {
             $route.reload();
         });
     };
-});
+}]);
 
-controllers.controller('UserCtrl', function($scope, $location, user) {
+controllers.controller('UserCtrl', ['$scope', '$location', 'user', function($scope, $location, user) {
     $scope.user = user;
 
     $scope.save = function() {
@@ -43,4 +43,4 @@ controllers.controller('UserCtrl', function($scope, $location, user) {
             });
         }
     };
-});
+}]);

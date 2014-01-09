@@ -20,7 +20,7 @@ var app = angular.module('app', [
     'app.templates'
 ]);
 
-app.config(function($routeProvider) {
+app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/home', {
             template: '<h1>Home Page</h1>',
@@ -30,30 +30,30 @@ app.config(function($routeProvider) {
             templateUrl: '/javascripts/partials/list.html',
             controller: 'ListCtrl',
             resolve: {
-                users: function(User, $route) {
+                users: ['User', '$route', function(User, $route) {
                     return User.query({ page: $route.current.params.page })
-                }
+                }]
             }
         })
         .when('/create', {
             templateUrl: '/javascripts/partials/create.html',
             controller: 'UserCtrl',
             resolve: {
-                user: function(User) {
+                user: ['User', function(User) {
                     return new User();
-                }
+                }]
             }
         })
         .when('/edit/:id', {
             templateUrl: '/javascripts/partials/edit.html',
             controller: 'UserCtrl',
             resolve: {
-                user: function(User, $route) {
+                user: ['User', '$route', function(User, $route) {
                     return User.get({ id: $route.current.params.id })
-                }
+                }]
             }
         })
         .otherwise({
             redirectTo: '/home'
         });
-});
+}]);

@@ -1,7 +1,7 @@
 
 var services = angular.module('app.services', ['ngResource']);
 
-services.factory('User', function ($resource) {
+services.factory('User', ['$resource', function($resource) {
     return $resource('/api/users/:id', { id: '@_id' }, {
         query: {
             method: 'GET',
@@ -9,4 +9,4 @@ services.factory('User', function ($resource) {
         },
         update: { method: 'PUT' }
     });
-});
+}]);
