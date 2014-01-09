@@ -11,6 +11,8 @@
     "express": "3.4.4",
     "mongoose": "~3.6.20",
     "async": "~0.2.9",
+    "jade": "~1.0.2",
+    "connect-assets": "~2.5.3",
 
     "bower": "~1.2.8",
     "grunt": "~0.4.2",

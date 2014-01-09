@@ -1,4 +1,16 @@
 
+//= require bower_components/jquery/jquery.min.js
+//= require bower_components/bootstrap/dist/js/bootstrap.min.js
+//= require bower_components/angular/angular.js
+//= require bower_components/angular-route/angular-route.js
+//= require bower_components/angular-resource/angular-resource.js
+//= require bower_components/angular-sanitize/angular-sanitize.js
+//= require bower_components/angular-animate/angular-animate.js
+//= require controllers.js
+//= require services.js
+//= require directives.js
+//= require templates.js
+
 var app = angular.module('app', [
     'ngRoute',
     'ngAnimate',

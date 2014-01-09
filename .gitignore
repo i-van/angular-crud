@@ -1,3 +1,5 @@
 .idea
 node_modules
 public/javascripts/bower_components
+builtAssets
+public/javascripts/partials/templates.js
