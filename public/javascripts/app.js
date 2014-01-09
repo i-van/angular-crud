@@ -8,6 +8,8 @@
 //= require bower_components/angular-animate/angular-animate.js
 //= require_tree app
 
+(function(window, angular, undefined) {'use strict';
+
 var app = angular.module('app', [
     'ngRoute',
     'ngAnimate',
@@ -54,3 +56,5 @@ app.config(['$routeProvider', function($routeProvider) {
             redirectTo: '/home'
         });
 }]);
+
+})(window, window.angular);

@@ -1,3 +1,4 @@
+(function(window, angular, undefined) {'use strict';
 
 var services = angular.module('app.services', ['ngResource']);
 
@@ -10,3 +11,5 @@ services.factory('User', ['$resource', function($resource) {
         update: { method: 'PUT' }
     });
 }]);
+
+})(window, window.angular);

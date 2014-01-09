@@ -1,3 +1,4 @@
+(function(window, angular, undefined) {'use strict';
 
 var controllers = angular.module('app.controllers', []);
 
@@ -44,3 +45,5 @@ controllers.controller('UserCtrl', ['$scope', '$location', 'user', function($sco
         }
     };
 }]);
+
+})(window, window.angular);

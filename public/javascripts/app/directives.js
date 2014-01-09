@@ -1,3 +1,4 @@
+(function(window, angular, undefined) {'use strict';
 
 var directives = angular.module('app.directives', ['ngSanitize']);
 
@@ -127,3 +128,5 @@ directives.directive('modalConfirm', function() {
         }
     };
 });
+
+})(window, window.angular);
